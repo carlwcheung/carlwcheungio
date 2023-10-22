@@ -1,0 +1,19 @@
+---
+const { title, description, url, pubDate } = Astro.props;
+const formattedDate = new Date(pubDate).toLocaleDateString();
+---
+
+<li class="p-4 mb-10 transition bg-gray-100 border rounded-lg cursor-pointer
+hover:shadow-lg">
+    <a class="text-black" href={url}>
+        <time class="text-sm" datetime={pubDate}>
+            {formattedDate}
+        </time>
+        <h2 class="py-2 text-lg font-bold">
+            {title}
+        </h2>
+        <p class="pb-2">
+            {description}
+        </p>
+    </a>
+</li>
